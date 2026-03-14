@@ -107,15 +107,15 @@
 
   /* Hero photorealistic sunset */
   @keyframes sun-descent {
-    0%   { background-position: 75% 10%; }
-    50%  { background-position: 70% 30%; }
-    100% { background-position: 75% 10%; }
+    0%   { background-position: 78% 18%; }
+    50%  { background-position: 74% 32%; }
+    100% { background-position: 78% 18%; }
   }
 
-  @keyframes water-descent {
-    0%   { background-position: 75% 90%; }
-    50%  { background-position: 70% 70%; }
-    100% { background-position: 75% 90%; }
+  @keyframes sun-descent-reflection {
+    0%   { background-position: 78% 82%; }
+    50%  { background-position: 74% 68%; }
+    100% { background-position: 78% 82%; }
   }
 
   @keyframes ripple-move {
@@ -123,45 +123,85 @@
     100% { background-position: 20px 0px; }
   }
 
-  .hero-sky {
-    background: radial-gradient(
-      ellipse at 75% 20%,
-      #FFF4C2 0%,
-      #F4A000 12%,
-      #D95F00 30%,
-      #7B1F00 55%,
-      #1A0A2E 100%
-    );
-    background-size: 200% 200%;
-    animation: sun-descent 15s ease-in-out infinite;
+  @keyframes water-sheen {
+    0%, 100% { opacity: 0.2; transform: translateX(-50%) scaleX(1); }
+    50% { opacity: 0.35; transform: translateX(-50%) scaleX(1.1); }
   }
 
-  .hero-water {
+  .hero-sky {
     background: radial-gradient(
-      ellipse at 75% 80%,
-      #FFF4C2 0%,
-      #F4A000 12%,
-      #D95F00 30%,
-      #7B1F00 55%,
-      #1A0A2E 100%
+      ellipse at 78% 18%,
+      hsl(48 100% 88%) 0%,
+      hsl(39 100% 48%) 14%,
+      hsl(26 100% 43%) 35%,
+      hsl(15 100% 24%) 62%,
+      hsl(264 64% 11%) 100%
     );
-    background-size: 200% 200%;
-    animation: water-descent 15s ease-in-out infinite;
-    opacity: 0.85;
+    background-size: 170% 170%;
+    animation: sun-descent 10s ease-in-out infinite;
+  }
+
+  .hero-water-layer {
+    filter: blur(1px);
+  }
+
+  .hero-water-reflection {
+    background: radial-gradient(
+      ellipse at 78% 18%,
+      hsl(48 100% 88%) 0%,
+      hsl(39 100% 48%) 14%,
+      hsl(26 100% 43%) 35%,
+      hsl(15 100% 24%) 62%,
+      hsl(264 64% 11%) 100%
+    );
+    background-size: 170% 170%;
+    transform: scaleY(-1) scale(1.06);
+    transform-origin: center;
+    animation: sun-descent-reflection 10s ease-in-out infinite;
+    opacity: 0.82;
   }
 
   .hero-ripples {
     background: repeating-linear-gradient(
       0deg,
-      rgba(255,255,255,0.15) 0px,
-      rgba(255,255,255,0.15) 1px,
+      hsl(0 0% 100% / 0.15) 0px,
+      hsl(0 0% 100% / 0.15) 1px,
       transparent 1px,
       transparent 8px
     );
     animation: ripple-move 3s linear infinite alternate;
   }
 
+  .hero-water-sheen {
+    left: 50%;
+    width: 34%;
+    background: linear-gradient(
+      to bottom,
+      hsl(48 100% 88% / 0.22),
+      hsl(48 100% 88% / 0)
+    );
+    animation: water-sheen 4s ease-in-out infinite;
+  }
+
+  .hero-horizon-line {
+    background: hsl(39 73% 53% / 0.65);
+    box-shadow: 0 0 18px hsl(39 73% 53% / 0.6);
+    filter: blur(1.5px);
+  }
+
+  .hero-sun-track {
+    width: 120px;
+    height: 50svh;
+    background: linear-gradient(
+      to bottom,
+      hsl(48 100% 88% / 0.6),
+      hsl(48 100% 88% / 0)
+    );
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
   .hero-title-shadow {
-    text-shadow: 0 0 40px rgba(0,0,0,0.8);
+    text-shadow: 0 0 40px hsl(0 0% 0% / 0.8);
   }
 }
