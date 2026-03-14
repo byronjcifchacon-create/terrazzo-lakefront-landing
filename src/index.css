@@ -104,4 +104,43 @@
     width: max-content;
     animation: scroll 20s linear infinite;
   }
+
+  /* Hero sunset animation */
+  @keyframes sunset {
+    0%, 100% { background: linear-gradient(to bottom, #1B2A4A, #C1440E); }
+    33% { background: linear-gradient(to bottom, #C1440E, #F4A261); }
+    66% { background: linear-gradient(to bottom, #F4A261, #E59D2C); }
+  }
+
+  @keyframes sunset-water {
+    0%, 100% { background: linear-gradient(to top, #1B2A4A, #C1440E); }
+    33% { background: linear-gradient(to top, #C1440E, #F4A261); }
+    66% { background: linear-gradient(to top, #F4A261, #E59D2C); }
+  }
+
+  @keyframes water-ripple {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .hero-sky {
+    animation: sunset 10s ease-in-out infinite;
+  }
+
+  .hero-water {
+    animation: sunset-water 10s ease-in-out infinite, water-ripple 4s ease-in-out infinite;
+    opacity: 0.6;
+    background-size: 200% 100%;
+  }
+
+  .hero-horizon {
+    background: #E59D2C;
+    box-shadow: 0 0 20px 10px rgba(229, 157, 44, 0.5);
+    opacity: 0.7;
+  }
+
+  .hero-title-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.2);
+  }
 }
