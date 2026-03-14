@@ -1,6 +1,6 @@
 const LocationSection = () => {
   return (
-    <section className="py-24 bg-card border-t border-border">
+    <section className="py-24 bg-card border-t border-border" id="location">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div className="order-2 md:order-1">
           <h2 className="serif text-4xl mb-6">Ubicación y Horarios</h2>

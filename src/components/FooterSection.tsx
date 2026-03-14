@@ -1,6 +1,6 @@
 const FooterSection = () => {
   return (
-    <footer className="py-12 px-6 border-t border-border text-center">
+    <footer className="py-12 px-6 border-t border-border text-center" id="footer">
       <div className="max-w-6xl mx-auto">
         <h3 className="serif text-2xl mb-8">Terrazzo</h3>
         <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground mb-12">

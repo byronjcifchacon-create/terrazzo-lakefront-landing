@@ -55,6 +55,11 @@ export default {
         terracotta: "hsl(var(--terracotta))",
         stone: "hsl(var(--stone-black))",
         sand: "hsl(var(--sand))",
+        marigold: "hsl(var(--marigold))",
+        buff: "hsl(var(--buff))",
+        pearl: "hsl(var(--pearl))",
+        policeBlue: "hsl(var(--police-blue))",
+        citrineBrown: "hsl(var(--citrine-brown))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
