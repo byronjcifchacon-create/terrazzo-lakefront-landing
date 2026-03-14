@@ -14,14 +14,24 @@ const foodImages = [
 const HeroSection = () => {
   return (
     <section id="top" className="relative h-svh w-full overflow-hidden flex flex-col items-center justify-center">
-      {/* CAPA 1 - Cielo con puesta de sol */}
+      {/* CAPA 1 - Cielo con puesta de sol (radial gradient) */}
       <div className="absolute inset-x-0 top-0 h-1/2 z-0 hero-sky" />
 
-      {/* CAPA 2 - Reflejo en el agua */}
-      <div className="absolute inset-x-0 bottom-0 h-1/2 z-0 hero-water" />
+      {/* CAPA 2 - Reflejo en el agua (flipped sky + ripple lines) */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 z-0 overflow-hidden">
+        <div className="absolute inset-0 hero-sky" style={{ transform: 'scaleY(-1)', filter: 'blur(1px)' }} />
+        <div className="absolute inset-0 hero-ripples" />
+      </div>
 
-      {/* Línea divisoria horizonte */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[5] h-2 hero-horizon" />
+      {/* Brillo del sol en el agua */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[5]"
+        style={{
+          width: 120,
+          height: '50%',
+          background: 'linear-gradient(to bottom, rgba(255,244,194,0.6), transparent)',
+          filter: 'blur(40px)',
+        }}
+      />
 
       {/* Social Icons */}
       <div className="absolute top-8 right-8 z-30 flex gap-6">

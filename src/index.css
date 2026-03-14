@@ -105,42 +105,43 @@
     animation: scroll 20s linear infinite;
   }
 
-  /* Hero sunset animation */
-  @keyframes sunset {
-    0%, 100% { background: linear-gradient(to bottom, #1B2A4A, #C1440E); }
-    33% { background: linear-gradient(to bottom, #C1440E, #F4A261); }
-    66% { background: linear-gradient(to bottom, #F4A261, #E59D2C); }
+  /* Hero photorealistic sunset */
+  @keyframes sun-descent {
+    0%   { background-position: 75% 10%; }
+    50%  { background-position: 70% 30%; }
+    100% { background-position: 75% 10%; }
   }
 
-  @keyframes sunset-water {
-    0%, 100% { background: linear-gradient(to top, #1B2A4A, #C1440E); }
-    33% { background: linear-gradient(to top, #C1440E, #F4A261); }
-    66% { background: linear-gradient(to top, #F4A261, #E59D2C); }
-  }
-
-  @keyframes water-ripple {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  @keyframes ripple-move {
+    0%   { background-position: 0px 0px; }
+    100% { background-position: 20px 0px; }
   }
 
   .hero-sky {
-    animation: sunset 10s ease-in-out infinite;
+    background: radial-gradient(
+      ellipse at 75% 20%,
+      #FFF4C2 0%,
+      #F4A000 12%,
+      #D95F00 30%,
+      #7B1F00 55%,
+      #1A0A2E 100%
+    );
+    background-size: 200% 200%;
+    animation: sun-descent 15s ease-in-out infinite;
   }
 
-  .hero-water {
-    animation: sunset-water 10s ease-in-out infinite, water-ripple 4s ease-in-out infinite;
-    opacity: 0.6;
-    background-size: 200% 100%;
-  }
-
-  .hero-horizon {
-    background: #E59D2C;
-    box-shadow: 0 0 20px 10px rgba(229, 157, 44, 0.5);
-    opacity: 0.7;
+  .hero-ripples {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.15) 0px,
+      rgba(255,255,255,0.15) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+    animation: ripple-move 3s linear infinite alternate;
   }
 
   .hero-title-shadow {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 40px rgba(0,0,0,0.8);
   }
 }
