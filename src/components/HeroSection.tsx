@@ -17,21 +17,16 @@ const HeroSection = () => {
       {/* CAPA 1 - Cielo con puesta de sol (radial gradient) */}
       <div className="absolute inset-x-0 top-0 h-1/2 z-0 hero-sky" />
 
-      {/* CAPA 2 - Reflejo en el agua (flipped sky + ripple lines) */}
-      <div className="absolute inset-x-0 bottom-0 h-1/2 z-0 overflow-hidden" style={{ filter: 'blur(1px)' }}>
-        <div className="absolute inset-0 hero-water" />
+      {/* CAPA 2 - Reflejo en el agua */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 z-0 overflow-hidden hero-water-layer">
+        <div className="absolute inset-0 hero-water-reflection" />
         <div className="absolute inset-0 hero-ripples" />
+        <div className="absolute inset-0 hero-water-sheen" />
       </div>
 
-      {/* Brillo del sol en el agua */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[5]"
-        style={{
-          width: 120,
-          height: '50%',
-          background: 'linear-gradient(to bottom, rgba(255,244,194,0.6), transparent)',
-          filter: 'blur(40px)',
-        }}
-      />
+      {/* Horizonte + brillo del sol en el agua */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[4] h-px hero-horizon-line" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[5] hero-sun-track" />
 
       {/* Social Icons */}
       <div className="absolute top-8 right-8 z-30 flex gap-6">
