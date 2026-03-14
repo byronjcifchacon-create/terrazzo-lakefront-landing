@@ -18,8 +18,8 @@ const HeroSection = () => {
       <div className="absolute inset-x-0 top-0 h-1/2 z-0 hero-sky" />
 
       {/* CAPA 2 - Reflejo en el agua (flipped sky + ripple lines) */}
-      <div className="absolute inset-x-0 bottom-0 h-1/2 z-0 overflow-hidden">
-        <div className="absolute inset-0 hero-sky" style={{ transform: 'scaleY(-1)', filter: 'blur(1px)' }} />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 z-0 overflow-hidden" style={{ filter: 'blur(1px)' }}>
+        <div className="absolute inset-0 hero-water" />
         <div className="absolute inset-0 hero-ripples" />
       </div>
 
