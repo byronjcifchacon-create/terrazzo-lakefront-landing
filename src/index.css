@@ -112,6 +112,12 @@
     100% { background-position: 75% 10%; }
   }
 
+  @keyframes water-descent {
+    0%   { background-position: 75% 90%; }
+    50%  { background-position: 70% 70%; }
+    100% { background-position: 75% 90%; }
+  }
+
   @keyframes ripple-move {
     0%   { background-position: 0px 0px; }
     100% { background-position: 20px 0px; }
@@ -128,6 +134,20 @@
     );
     background-size: 200% 200%;
     animation: sun-descent 15s ease-in-out infinite;
+  }
+
+  .hero-water {
+    background: radial-gradient(
+      ellipse at 75% 80%,
+      #FFF4C2 0%,
+      #F4A000 12%,
+      #D95F00 30%,
+      #7B1F00 55%,
+      #1A0A2E 100%
+    );
+    background-size: 200% 200%;
+    animation: water-descent 15s ease-in-out infinite;
+    opacity: 0.85;
   }
 
   .hero-ripples {
